@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/api/$1"
+    }
+  ],
+  "env": {
+    "DOSTAVISTA_API_KEY": "E032154FE89743FDB0403CD4E1E5D46312418DDC"
+  }
+}
