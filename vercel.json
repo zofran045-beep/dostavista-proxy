@@ -8,22 +8,11 @@
   ],
   "routes": [
     {
-      "src": "/calculate",
-      "methods": ["GET", "POST", "OPTIONS"],
-      "continue": true
-    },
-    {
-      "src": "/create-order",
-      "methods": ["GET", "POST", "OPTIONS"],
-      "continue": true
-    },
-    {
-      "src": "/api/(.*)",
+      "src": "/(.*)",
       "dest": "/api/$1"
     }
   ],
   "env": {
     "DOSTAVISTA_API_KEY": "E032154FE89743FDB0403CD4E1E5D46312418DDC"
-  },
-  "regions": ["iad1"]
+  }
 }

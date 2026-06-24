@@ -15,23 +15,28 @@ export default async function handler(req, res) {
     try {
         const { body, headers } = req;
         
+        console.log('Proxy received request to calculate-order');
+        
         const response = await fetch('https://apitest.dostavista.ru/api/business/1.1/calculate-order', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'X-DV-Auth-Token': headers['x-dv-auth-token'] || process.env.DOSTAVISTA_API_KEY
             },
-            body: JSON.stringify(body)
+            body: JSON.stringify(body),
+            signal: AbortSignal.timeout(30000) // 30 секунд таймаут
         });
 
         const data = await response.json();
+        console.log('Proxy received response from Dostavista');
         
         return res.status(response.status).json(data);
     } catch (error) {
         console.error('Proxy error:', error);
         return res.status(500).json({ 
             error: 'Proxy error',
-            message: error.message 
+            message: error.message,
+            timeout: error.name === 'TimeoutError'
         });
     }
 }
