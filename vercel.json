@@ -8,12 +8,12 @@
   ],
   "routes": [
     {
-      "src": "/calculate",
-      "dest": "/api/calculate"
+      "src": "/api/calculate",
+      "dest": "api/calculate.js"
     },
     {
-      "src": "/create-order",
-      "dest": "/api/create-order"
+      "src": "/api/create-order",
+      "dest": "api/create-order.js"
     }
   ]
 }
