@@ -14,5 +14,6 @@
   ],
   "env": {
     "DOSTAVISTA_API_KEY": "E032154FE89743FDB0403CD4E1E5D46312418DDC"
-  }
+  },
+  "regions": ["iad1"]
 }
