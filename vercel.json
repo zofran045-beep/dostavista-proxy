@@ -8,8 +8,12 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "/api/$1"
+      "src": "/calculate",
+      "dest": "/api/calculate"
+    },
+    {
+      "src": "/create-order",
+      "dest": "/api/create-order"
     }
   ],
   "env": {
