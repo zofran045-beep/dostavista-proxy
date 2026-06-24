@@ -8,7 +8,17 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/calculate",
+      "methods": ["GET", "POST", "OPTIONS"],
+      "continue": true
+    },
+    {
+      "src": "/create-order",
+      "methods": ["GET", "POST", "OPTIONS"],
+      "continue": true
+    },
+    {
+      "src": "/api/(.*)",
       "dest": "/api/$1"
     }
   ],
